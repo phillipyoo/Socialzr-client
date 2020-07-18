@@ -2,3 +2,18 @@
     display: flex;
     justify-content: space-between;
 }
+
+.linkStyles {
+    text-decoration: none;
+    color: yellow;
+    margin: .5em;
+    padding: 5px;
+    border-top:2px solid #777777;
+    border-right:2px solid #333333;
+    border-bottom:2px solid #444444;
+    border-left:2px solid #777777;
+}
+
+.linkStyles:hover {
+    background-color: #929292;
+}
