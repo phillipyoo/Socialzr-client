@@ -72,7 +72,7 @@ const EditEventPost = ({history, match}) => {
 
             <div className='divStyles'>
                 <label className='labelStyles'>Category</label>
-                    <select name='Cat' id='Cat'>
+                    <select className='Category' id='Cat'>
                         <option value='Festival'>Festival</option>
                         <option value='Party'>Party</option>
                         <option value='Event'>Event</option>
@@ -98,7 +98,7 @@ const EditEventPost = ({history, match}) => {
                 <label className="labelStyles">Description</label>
                 <textarea form="editPostForm" required className="textAreaStyles" name="description" value={formState.description} onChange={handleChange}></textarea>
             </div>
-            <input type="submit" value="Update post"></input>
+            <input className="buttonStyles" type="submit" value="Update post"></input>
         </form>
     ) 
 }

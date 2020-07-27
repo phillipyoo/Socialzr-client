@@ -14,6 +14,7 @@ import {getPostFromId, getAllEventPosts, addEventPost} from './services/eventPos
 import { userAuthenticated, getLoggedInUser, setLoggedInUser } from './services/authServices'
 
 import './styles/App.css'
+import './styles/theme.css'
 
 const App = () => {
 
@@ -68,7 +69,7 @@ const App = () => {
       <BrowserRouter>
         <Nav />
           <div id="div_spacer">
-            <h1 id="main_title">SocialZr</h1>
+            <h1 id="main_title">Socialzr</h1>
           </div>
         <Switch>
             <Route exact path="/" render={(props) => <EventPosts {...props} eventData={eventPosts} /> } />
