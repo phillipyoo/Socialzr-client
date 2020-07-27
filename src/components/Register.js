@@ -32,6 +32,10 @@ const Register = ({history}) => {
             })
             history.push("/")
         })
+        .catch(error => {
+            setErrorMessage("Oops something went wrong, try another email");
+        });
+        
     }
 
     return (
