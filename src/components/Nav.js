@@ -23,19 +23,19 @@ const Nav = () => {
     const {store, dispatch} = useGlobalState()
     const {loggedInUser} = store    
     return (
-        <div className="divStyles">
+        <div className="navStyles">
             {loggedInUser 
             ? (<div>
                 <Link className="linkStyles" to="/">{loggedInUser}</Link>
                 <Link className="linkStyles" onClick={handleLogout} to="/">Logout</Link>
                 </div>)
-            : (<div>
-                <Link className="linkStyles" to="/">guest</Link>
+            : (<div className="authStyles">
+                {/* <Link className="linkStyles" to="/">guest</Link> */}
                 <Link className="linkStyles" to="/auth/login">Login</Link>
-                <Link className="linkStyles" to="/auth/register">Register</Link>
+                <Link className="linkStyles" to="/auth/register">Sign Up</Link>
                 </div>)
             }
-            <div >
+            <div className="navButtons">
                 <Link className="linkStyles" to="/">Home</Link>
                 <Link className="linkStyles" to="/new-event">Add a post</Link>
             </div>
