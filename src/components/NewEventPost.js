@@ -57,7 +57,7 @@ const NewEventPost = ({history}) => {
   } 
 
   const [formState,setFormState] = useState(initialFormState)
-  const [errorMessage, setErrorMessage] = useState(null)
+  const [setErrorMessage] = useState(null)
   const {store, dispatch} = useGlobalState()
   const {eventPosts} = store
 
