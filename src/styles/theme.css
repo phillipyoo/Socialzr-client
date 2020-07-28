@@ -1,0 +1,49 @@
+body {
+    margin: 20px;
+    background-color: white;
+    color: black;
+}
+
+/* button style */
+.buttonStyles {
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    margin: .5em;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-weight: 300;
+}
+.button:hover{
+    background-color: white;
+    color: black;
+}
+
+/* forms - input */
+.inputStyles {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: medium;
+    border-bottom: solid black;
+}
+
+/* forms - labels */
+.labelStyles {
+font-family: 'Montserrat', sans-serif;
+font-weight: 200;
+font-size: medium;
+}
+
+.textAreaStyles {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: medium;
+}
+
+.category {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: medium;
+}

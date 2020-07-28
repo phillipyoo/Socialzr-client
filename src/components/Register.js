@@ -3,6 +3,7 @@ import {useGlobalState} from '../config/store'
 import {registerUser} from '../services/authServices';
 
 import '../styles/Register.css'
+import '../styles/theme.css'
 
 const Register = ({history}) => {
     const initialFormState = {
@@ -53,7 +54,7 @@ const Register = ({history}) => {
                 <label className="labelStyles">Password</label>
                 <input className="labelStyles" required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></input>
             </div>
-            <input type="submit" value="Register"></input>
+            <input className="buttonStyles" type="submit" value="Register"></input>
             
         </form>
     )

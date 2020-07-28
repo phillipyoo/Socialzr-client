@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {useGlobalState} from '../config/store'
 
 import '../styles/EventPost.css'
+import '../styles/theme.css'
 
 const EventPost = ({history, post, showControls}) => {
 

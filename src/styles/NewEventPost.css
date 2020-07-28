@@ -9,8 +9,8 @@ body {
 .eventPost-Container {
     width: 100vw;
     height: 120vh;
-    position: absolute;
-    left: 39%
+    position: relative;
+    /* left: 35% */
     
 }
 
@@ -40,7 +40,7 @@ body {
 /* Individual Elements */
 
 .date {
-    width: 7rem !important;
+    width: 10rem !important;
 }
 
 #Cat {
@@ -48,6 +48,6 @@ body {
     width: 5rem;
 }
 
-#button {
+/* #button {
     margin: 1em;
-}
+} */

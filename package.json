@@ -37,6 +37,7 @@
       "last 1 safari version"
     ]
   },
+  
   "main": "index.js",
   "repository": "https://github.com/thestrongcoder/Socialzr-client.git",
   "author": "thestrongcoder <stephleehales@gmail.com>",
