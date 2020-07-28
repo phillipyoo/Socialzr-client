@@ -4,6 +4,7 @@
 }
 
 .navStyles {
+    display: flex;
     direction: rtl;
     justify-content: flex-start;
 }

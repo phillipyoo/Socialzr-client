@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import {useGlobalState} from '../config/store'
 import {logoutUser} from '../services/authServices'
 import '../styles/Nav.css'
+import '../styles/theme.css'
 
 const Nav = () => {
 
@@ -26,7 +27,7 @@ const Nav = () => {
         <div className="navStyles">
             {loggedInUser 
             ? (<div>
-                <Link className="linkStyles" to="/">{loggedInUser}</Link>
+                <Link className="llinkStyles" to="/">{loggedInUser}</Link>
                 <Link className="linkStyles" onClick={handleLogout} to="/">Logout</Link>
                 </div>)
             : (<div className="authStyles">
@@ -37,7 +38,7 @@ const Nav = () => {
             }
             <div className="navButtons">
                 <Link className="linkStyles" to="/">Home</Link>
-                <Link className="linkStyles" to="/new-event">Add a post</Link>
+                <Link className="linkStyles" to="/new-event">Create Event</Link>
             </div>
         </div>
     )

@@ -5,6 +5,7 @@ import {addEventPost} from '../services/eventPostServices'
 // import {Block, Input, Label, ErrorText} from './StyledComponents'
 
 import '../styles/NewEventPost.css'
+import '../styles/theme.css'
 
 const NewEventPost = ({history}) => {
 
@@ -76,7 +77,7 @@ const NewEventPost = ({history}) => {
 
       <div className='divStyles'>
         <label className='labelStyles'>Category</label>
-          <select name='category' id='Cat'>
+          <select className='category' id='Cat'>
             <option value='Festival'>Festival</option>
             <option value='Party'>Party</option>
             <option value='Event'>Event</option>
@@ -98,7 +99,7 @@ const NewEventPost = ({history}) => {
         <textarea form='newPostForm' required className='textAreaStyles' name='description' placeholder='Enter post here' onChange={handleChange} />
       </div>
 
-      <input id="button" type='submit' value='Add post' />
+      <input className="buttonStyles" id="button" type='submit' value='Create Event' />
     </form>
     </div>
   )

@@ -3,6 +3,7 @@ import {useGlobalState} from '../config/store'
 import {loginUser} from '../services/authServices'
 
 import '../styles/signIn.css'
+import '../styles/theme.css'
 
 const SignIn = ({history}) => {
     const initialFormState = {
@@ -37,9 +38,6 @@ const SignIn = ({history}) => {
         })
         
     }
-   
-    
-       
 
 
     return (
@@ -53,7 +51,7 @@ const SignIn = ({history}) => {
                 <label className="labelStyles">Password</label>
                 <input className="inputStyles" required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></input>
             </div>
-            <input type="submit" value="Login"></input>
+            <input className="buttonStyles" type="submit" value="Login"></input>
             
         </form>
     )

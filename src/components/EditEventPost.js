@@ -4,6 +4,7 @@ import {useGlobalState} from '../config/store'
 import {getPostFromId} from '../services/eventPostServices'
 
 import '../styles/EditEventPost.css'
+import '../styles/theme.css'
 
 const EditEventPost = ({history, match}) => {
 
