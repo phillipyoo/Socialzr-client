@@ -27,7 +27,17 @@
     justify-content: center;
     margin: 0px;
     font-family: 'Montserrat';
-    
+  }
+
+  #footer{
+    min-height: 10vh;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px;
+    font-family: 'Montserrat';
   }
   
   .header{
@@ -74,7 +84,7 @@
     background-color:#f6f6f6;
   }
   
-  .div-title {;
+  .div-title {
     font-size: 30px;
     font-weight: 600;
   }
@@ -120,12 +130,21 @@
   }
   
   .contact-btn {
-    margin-top: 15px;
-    height: 40px;
+    margin-top: .5em;
+    padding: 10px;
+    /* height: 40px; */
     color: white;
-    border: 0;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     background-color: black;
   }
+
+.contact-btn:hover {
+    background-color: white;
+    color: black;
+}
 
   .footer{
     background-color:white;
@@ -213,13 +232,13 @@
         margin: 3em;
         margin-left: 20px;
         margin-right: 20px;
-      }
+    }
     .contact-form{
     display: flex;
     flex-direction: column;
     flex-flow: row wrap;
     width: 100%;
-        }
+    }
   }
 
   
