@@ -1,3 +1,12 @@
+.navbar{
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+    height: 20px;
+    /* padding: 90px ; */
+}
+
 .divStyles {
     display: flex;
     justify-content: space-between;
@@ -7,6 +16,8 @@
     display: flex;
     direction: rtl;
     justify-content: flex-start;
+    width: 100%;
+    color: black;
 }
 
 .authStyles {

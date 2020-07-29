@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {loginUser} from '../services/authServices'
+import Header from '../components/Header'
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 
-import '../styles/signIn.css'
+import '../styles/App.css'
 import '../styles/theme.css'
 
 const SignIn = ({history}) => {
@@ -41,6 +44,10 @@ const SignIn = ({history}) => {
 
 
     return (
+        <div id="body">
+        <Nav />
+        <Header />
+
         <form onSubmit={handleSubmit}>
             {errorMessage && <p className={{color: 'red'}}>{errorMessage}</p>}
             <div className="divStyles">
@@ -52,8 +59,9 @@ const SignIn = ({history}) => {
                 <input className="inputStyles" required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></input>
             </div>
             <input className="buttonStyles" type="submit" value="Login"></input>
-            
         </form>
+        <Footer />
+        </div>
     )
 }
 export default SignIn

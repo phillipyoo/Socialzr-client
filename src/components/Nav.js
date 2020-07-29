@@ -5,6 +5,7 @@ import {useGlobalState} from '../config/store'
 import {logoutUser} from '../services/authServices'
 import '../styles/Nav.css'
 import '../styles/theme.css'
+// import Navbar from 'react-bootstrap/Navbar'
 
 const Nav = () => {
 
@@ -24,10 +25,11 @@ const Nav = () => {
     const {store, dispatch} = useGlobalState()
     const {loggedInUser} = store    
     return (
+        <div className="navbar">
         <div className="navStyles">
             {loggedInUser 
             ? (<div>
-                <Link className="llinkStyles" to="/">{loggedInUser}</Link>
+                <Link className="linkStyles" to="/">{loggedInUser}</Link>
                 <Link className="linkStyles" onClick={handleLogout} to="/">Logout</Link>
                 </div>)
             : (<div className="authStyles">
@@ -41,9 +43,8 @@ const Nav = () => {
                 <Link className="linkStyles" to="/new-event">Create Event</Link>
             </div>
         </div>
+        </div>
     )
 }
-
-
 export default Nav
 

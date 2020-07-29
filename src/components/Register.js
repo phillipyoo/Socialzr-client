@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {registerUser} from '../services/authServices';
+import Header from '../components/Header'
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 
-import '../styles/Register.css'
+import '../styles/App.css'
 import '../styles/theme.css'
 
 const Register = ({history}) => {
@@ -40,6 +43,9 @@ const Register = ({history}) => {
     }
 
     return (
+        <div id="body">
+        <Nav />
+        <Header />
         <form onSubmit={handleSubmit}>
             {errorMessage && <p className={{color: 'red'}}>{errorMessage}</p>}
             <div className="divStyles">
@@ -57,6 +63,8 @@ const Register = ({history}) => {
             <input className="buttonStyles" type="submit" value="Register"></input>
             
         </form>
+        <Footer />
+        </div>
     )
 }
 export default Register

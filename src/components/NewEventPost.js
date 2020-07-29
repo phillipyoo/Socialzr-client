@@ -2,6 +2,9 @@ import React, {useState} from 'react'
 import {withRouter} from 'react-router-dom'
 import { useGlobalState } from '../config/store'
 import {addEventPost} from '../services/eventPostServices'
+import Nav from '../components/Nav'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 // import {Block, Input, Label, ErrorText} from './StyledComponents'
 
 import '../styles/NewEventPost.css'
@@ -62,8 +65,14 @@ const NewEventPost = ({history}) => {
   const {eventPosts} = store
 
   return (
+    <div id="body">
+    <Nav />
+    <Header />
+    <div id="page-title">
+        <h1>Create an Event</h1>
+    </div>
     <div className="eventPost-Container">
-<form id="newPostForm" onSubmit={handleSubmit}>
+    <form id="newPostForm" onSubmit={handleSubmit}>
         {/* {errorMessage && <ErrorText>{errorMessage}</ErrorText>} */}
         <div className="divStyles">
             <p className="labelStyles">Event Title</p>
@@ -101,6 +110,10 @@ const NewEventPost = ({history}) => {
 
       <input className="buttonStyles" id="button" type='submit' value='Create Event' />
     </form>
+    </div>
+    <div id="footer">
+    <Footer />
+    </div>
     </div>
   )
 }
