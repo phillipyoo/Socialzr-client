@@ -2,7 +2,13 @@ import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {loginUser} from '../services/authServices'
 import Header from '../components/Header'
+
+import Nav from '../components/Nav'
+
+import api from '../config/api'
+
 import Footer from '../components/Footer'
+
 
 import '../styles/theme.css'
 import '../styles/App.css'
@@ -33,7 +39,10 @@ const SignIn = ({history}) => {
                 type: "setLoggedInUser",
                 data: userDetails.username
                 })
-            history.push("/");
+                api.post('/auth/login').then(response =>{
+                    console.log(response)
+                })
+                history.push("/");
         })
         .catch(error => {
             console.error(error)
@@ -41,7 +50,6 @@ const SignIn = ({history}) => {
         })
         
     }
-
 
     return (
         <div id="body">
