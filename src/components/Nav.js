@@ -28,11 +28,6 @@ const Nav = () => {
 
         <div className="navbar">
         <div className="navStyles">
-        <div className="navButtons">
-                <Link className="linkStyles" to="/">Home</Link>
-                <Link className="linkStyles" to="/events">Events</Link>
-                <Link className="linkStyles" to="/new-event">Create Event</Link>
-            </div>
             {loggedInUser 
             ? (<div>
                 <Link className="linkStyles" to="/">{loggedInUser}</Link>
@@ -44,6 +39,11 @@ const Nav = () => {
                 <Link className="linkStyles" to="/auth/register">Sign Up</Link>
                 </div>)
             }
+            <div className="navButtons">
+                <Link className="linkStyles" to="/">Home</Link>
+                <Link className="linkStyles" to="/events">Events</Link>
+                <Link className="linkStyles" to="/new-event">Create Event</Link>
+            </div>
         </div>
         </div>
     )
