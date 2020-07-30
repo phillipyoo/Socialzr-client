@@ -65,7 +65,7 @@ const EditEventPost = ({history, match}) => {
     },[post])
 
     return (
-        <form id="editPostForm" onSubmit={handleSubmit}>
+        <form className="form" id="editPostForm" onSubmit={handleSubmit}>
             <div className="divStyles">
                 <label className="labelStyles">Title</label>
                 <input className="inputStyles" required type="text" name="title" value={formState.title} onChange={handleChange}></input>

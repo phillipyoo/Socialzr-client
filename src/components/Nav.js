@@ -25,6 +25,7 @@ const Nav = () => {
     const {store, dispatch} = useGlobalState()
     const {loggedInUser} = store    
     return (
+
         <div className="navbar">
         <div className="navStyles">
             {loggedInUser 
@@ -40,6 +41,7 @@ const Nav = () => {
             }
             <div className="navButtons">
                 <Link className="linkStyles" to="/">Home</Link>
+                <Link className="linkStyles" to="/events">Events</Link>
                 <Link className="linkStyles" to="/new-event">Create Event</Link>
             </div>
         </div>
@@ -47,4 +49,3 @@ const Nav = () => {
     )
 }
 export default Nav
-

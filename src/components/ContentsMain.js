@@ -23,7 +23,7 @@ const ContentsMain = () => {
         <div id="body">
             <Card 
                 className='section'
-                image='./public/alexander-popov-hTv8aaPziOQ-unsplash.jpg'
+                img='../public/alexander-popov-hTv8aaPziOQ-unsplash.jpg'
                 title='Not just another event app' 
                 description="Whether its small of large, we're here to help you plan your events! Create events and spread the word to those who need to know. "
             />

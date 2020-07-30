@@ -10,6 +10,7 @@ const Contact = () => {
                 <div className='contact-form'>      
                     <div id='contactSection'>
                         <input type="text" placeholder="email address" className="input-field"/>
+                        <div className="divspacer"> </div>
                         <textarea name="" id="" cols="30" rows="5" placeholder="comment"></textarea>
                         <button className="contact-btn">Send</button>
                     </div>
