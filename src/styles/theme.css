@@ -1,5 +1,4 @@
 body {
-    background-color: white;
     color: black;
 }
 
@@ -21,10 +20,10 @@ body {
   }
 
   h1{
-      color: black;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 500;
-      font-size: 50px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 50px;
   }
 
 /* button style */
@@ -44,19 +43,28 @@ body {
     color: black;
 }
 
+.form {
+    min-width: 30%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    font-family: 'Montserrat';
+  }
+
 /* forms - input */
 .inputStyles {
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
     font-size: medium;
-    border-bottom: solid black;
 }
 
 /* forms - labels */
 .labelStyles {
-font-family: 'Montserrat', sans-serif;
-font-weight: 200;
-font-size: medium;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: medium;
 }
 
 .textAreaStyles {
@@ -69,4 +77,20 @@ font-size: medium;
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
     font-size: medium;
+}
+
+.btn-linkStyles {
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    margin: .5em;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-weight: 300;
+}
+.btn-linkStyles:hover{
+    background-color: white;
+    color: black;
 }

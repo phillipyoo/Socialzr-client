@@ -7,6 +7,7 @@ import EventPosts from './components/EventPosts'
 import EventPost from './components/EventPost'
 import EditEventPost from './components/EditEventPost'
 import NewEventPost from './components/NewEventPost'
+import Nav from './components/Nav'
 import SignIn from './components/SignIn'
 import Register from './components/Register'
 import stateReducer from './config/stateReducer'
@@ -64,21 +65,22 @@ const App = () => {
   },[])
 
   return (
-    <div >
       <StateContext.Provider value={{store,dispatch}}>
+      <div >
       <BrowserRouter>
+      <Nav />
         <Switch>
             <Route path="/" exact component={Index} />
-            <Route exact path="/" render={(props) => <EventPosts {...props} eventData={eventPosts} /> } />
-            <Route exact path="/events/:id" render={(props) => <EventPost {...props} post={getPostFromId(eventPosts,props.match.params.id)} showControls /> } />
-            <Route exact path="/events/edit/:id" component={EditEventPost} /> 
+            <Route exact path="/events" render={(props) => <EventPosts {...props} eventData={eventPosts} /> } />
             <Route exact path="/new-event" render={(props) => <NewEventPost {...props} addEventPost={addEventPost} /> } />
+            <Route exact path="/events/:id" render={(props) => <EventPost {...props} post={getPostFromId(eventPosts, props.match.params.id)} showControls /> } />
+            <Route exact path="/events/edit/:id" component={EditEventPost} /> 
+            <Route exact path="/auth/login" component={SignIn} />
+            <Route exact path="/auth/register" component={Register} />
           </Switch> 
-          <Route exact path="/auth/login" component={SignIn} />
-          <Route exact path="/auth/register" component={Register} />
         </BrowserRouter>
+        </div>
       </StateContext.Provider>
-    </div>
   )
 }
 
