@@ -18,7 +18,7 @@ h1 {
 
 }
 
-p {
+p, h2 {
     position: relative;
     margin-left: 4%;
     margin-right:4%;

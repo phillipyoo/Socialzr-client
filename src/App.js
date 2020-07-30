@@ -105,7 +105,7 @@ const Footer = () => {
   
     // Create state reducer store and dispatcher
     const [store, dispatch] = useReducer(stateReducer,initialState)
-    const {eventPosts, error} = store
+    const {eventPosts} = store
 
   useEffect(() => {
     fetchEventPosts();
