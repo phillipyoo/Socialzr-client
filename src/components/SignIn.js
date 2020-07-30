@@ -5,9 +5,12 @@ import Header from '../components/Header'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import api from '../config/api'
+import Footer from '../components/Footer'
 
-import '../styles/signIn.css'
+
 import '../styles/theme.css'
+import '../styles/App.css'
+
 
 const SignIn = ({history}) => {
     const initialFormState = {
@@ -47,7 +50,10 @@ const SignIn = ({history}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div id="body">
+        <Header />
+
+        <form className="form" onSubmit={handleSubmit}>
             {errorMessage && <p className={{color: 'red'}}>{errorMessage}</p>}
             <div className="divStyles">
                 <label className="labelStyles">Username</label>
@@ -57,9 +63,10 @@ const SignIn = ({history}) => {
                 <label className="labelStyles">Password</label>
                 <input className="inputStyles" required type="password" name="password" placeholder="Enter a password" onChange={handleChange}></input>
             </div>
-            <input className="buttonStyles" type="submit" value="Login"></input>
-            
+            <input className="btn-linkStyles" type="submit" value="Login"></input>
         </form>
+        <Footer />
+        </div>
     )
 }
 export default SignIn

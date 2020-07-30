@@ -8,8 +8,8 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 // import {Block, Input, Label, ErrorText} from './StyledComponents'
 
-import '../styles/NewEventPost.css'
 import '../styles/theme.css'
+import '../styles/NewEventPost.css'
 
 const NewEventPost = ({history}) => {
 
@@ -69,8 +69,15 @@ const NewEventPost = ({history}) => {
   const {eventPosts} = store
 
   return (
+    <div id="body">
+    <div className='header'>
+              <span className='header-title'>
+                  Create Event
+              </span>
+              
+          </div>
     <div className="eventPost-Container">
-<form id="newPostForm" onSubmit={handleSubmit}>
+    <form className="form" id="newPostForm" onSubmit={handleSubmit}>
         {/* {errorMessage && <ErrorText>{errorMessage}</ErrorText>} */}
         <div className="divStyles">
             <p className="labelStyles">Event Title</p>
@@ -92,13 +99,13 @@ const NewEventPost = ({history}) => {
       </div>
 
       <div className='divStyles'>
-        <label className='labelStyles'>Location</label>
-        <input className='inputStyles' required type='text' name='location' placeholder='Enter Event Location' onChange={handleChange} />
+        <label className='labelStyles'>Date</label>
+        <input className='inputStyles date' required type='date' name='date' onChange={handleChange} />
       </div>
 
       <div className='divStyles'>
-        <label className='labelStyles'>Date</label>
-        <input className='inputStyles date' required type='date' name='date' onChange={handleChange} />
+        <label className='labelStyles'>Location</label>
+        <input className='inputStyles' required type='text' name='location' placeholder='Enter Event Location' onChange={handleChange} />
       </div>
 
       <div className='divStyles'>
@@ -108,6 +115,10 @@ const NewEventPost = ({history}) => {
 
       <input className="buttonStyles" id="button" type='submit' value='Create Event' />
     </form>
+    </div>
+    <div id="footer">
+    <Footer />
+    </div>
     </div>
   )
 }

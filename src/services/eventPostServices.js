@@ -1,17 +1,17 @@
 import api from '../config/api'
 
+// Returns all event posts from the server
+export async function getAllEventPosts() {
+    const response = await api.get('/events');
+    return response.data
+}
+
 // Returns a single post based on the id provided
 export function getPostFromId(eventPosts,id) {
     console.log("posts: ", eventPosts)
     console.log("id: ", id)
     const post =  eventPosts.find((post) =>  post._id === id)
     return post
-}
-
-// Returns all event posts from the server
-export async function getAllEventPosts() {
-    const response = await api.get('/events');
-    return response.data
 }
 
 // Adds a post on the server
@@ -27,6 +27,6 @@ export async function deleteEventPost(id) {
 }
 
 export async function updateEventPost(post) {
-    const response = await api.put(`/events/${post.id}`, post)
+    const response = await api.put(`/events/${post._id}`, post)
     return response.data
 }
