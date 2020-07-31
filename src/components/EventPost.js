@@ -11,6 +11,7 @@ const EventPost = ({history, post, showControls}) => {
     const {eventPosts} = store
     // If we don't have a post, return null
     console.log("got post: ", post)
+    
     if (!post) return <div id="noPost"><p>There is no event listing with that ID</p></div>
     
     const {title, category, organiser, location, date, description} = post 
