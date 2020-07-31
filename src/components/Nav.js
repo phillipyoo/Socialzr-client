@@ -26,7 +26,7 @@ const Nav = () => {
     const {loggedInUser} = store    
     return (
 
-        <div className="navbar">
+        <div className="navbar" onClick={() => console.log(loggedInUser)}>
         <div className="navStyles">
             {loggedInUser 
             ? (<div>

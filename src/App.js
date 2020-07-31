@@ -14,6 +14,7 @@ import stateReducer from './config/stateReducer'
 import {StateContext} from './config/store'
 import {getPostFromId, getAllEventPosts, addEventPost} from './services/eventPostServices'
 import { userAuthenticated, getLoggedInUser, setLoggedInUser } from './services/authServices'
+import api from "./config/api"
 
 import './styles/theme.css'
 import './styles/App.css'
@@ -48,22 +49,31 @@ const App = () => {
 
   useEffect(() => {
     fetchEventPosts();
-    userAuthenticated().then(() => {
-      dispatch({
-        type: "setLoggedInUser",
-        data: getLoggedInUser()
-      })
-    }).catch((error) => {
-      console.log("got an error trying to check authenticated user: ", error)
-      setLoggedInUser(null)
-      dispatch({
-        type: "setLoggedInUser",
-        data: null
-      })
+
+    api.get('/auth/user').then(response => {
+        if(response.status === 200) {
+            dispatch({
+                type: "setLoggedInUser",
+                data: response.data.user.username
+            })
+        }
     })
-    // A function that specifies anyactions on component unmount
-    return () => {}
   },[])
+    // userAuthenticated().then(() => {
+    //   dispatch({
+    //     type: "setLoggedInUser",
+    //     data: getLoggedInUser()
+    //   })
+    // }).catch((error) => {
+    //   console.log("got an error trying to check authenticated user: ", error)
+    //   setLoggedInUser(null)
+    //   dispatch({
+    //     type: "setLoggedInUser",
+    //     data: null
+    //   })
+    // })
+    // // A function that specifies anyactions on component unmount
+    // return () => {}
 
   return (
       <StateContext.Provider value={{store,dispatch}}>

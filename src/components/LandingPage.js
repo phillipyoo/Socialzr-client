@@ -7,7 +7,11 @@ import '../styles/App.css'
 import '../styles/theme.css'
 import imageHeader from '../img/socialzr-band.png'
 
+
 function Index() {
+
+
+
     return (
       <React.Fragment>
         <img id="headerImage" src={imageHeader} alt=" " />
