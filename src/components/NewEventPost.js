@@ -5,6 +5,7 @@ import {addEventPost} from '../services/eventPostServices'
 import api from '../config/api'
 
 
+
 import Footer from '../components/Footer'
 // import {Block, Input, Label, ErrorText} from './StyledComponents'
 

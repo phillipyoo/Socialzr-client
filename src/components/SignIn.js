@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {loginUser} from '../services/authServices'
 import Header from '../components/Header'
-// import Nav from '../components/Nav'
 import api from '../config/api'
 import Footer from '../components/Footer'
 

@@ -26,6 +26,10 @@ const App = () => {
     loggedInUser: null
   }
   
+  // Create state reducer store and dispatcher
+  const [store, dispatch] = useReducer(stateReducer,initialState)
+  const {eventPosts} = store
+
   function fetchEventPosts(){
     getAllEventPosts().then((eventData) => {
       dispatch({
@@ -40,10 +44,7 @@ const App = () => {
       console.log("An error occured fetching event posts from the server: ", error);
     })
   }
-  
-    // Create state reducer store and dispatcher
-    const [store, dispatch] = useReducer(stateReducer,initialState)
-    const {eventPosts} = store
+
 
   useEffect(() => {
     fetchEventPosts();
@@ -71,7 +72,7 @@ const App = () => {
       <Nav />
         <Switch>
             <Route path="/" exact component={Index} />
-            <Route exact path="/events" render={(props) => <EventPosts {...props} eventData={eventPosts} /> } />
+            <Route exact path="/events" component={EventPosts}  />
             <Route exact path="/new-event" render={(props) => <NewEventPost {...props} addEventPost={addEventPost} /> } />
             <Route exact path="/events/:id" render={(props) => <EventPost {...props} post={getPostFromId(eventPosts, props.match.params.id)} showControls /> } />
             <Route exact path="/events/edit/:id" component={EditEventPost} /> 

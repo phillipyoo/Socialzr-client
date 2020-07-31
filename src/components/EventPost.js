@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import {useGlobalState} from '../config/store'
 import api from "../config/api"
 
-import '../styles/EventPost.css'
 import '../styles/theme.css'
 
 const EventPost = ({history, post, showControls}) => {
@@ -45,14 +44,15 @@ const EventPost = ({history, post, showControls}) => {
 
     return (
         <div className="post">
-            <Link className="postLinkStyles" to={`/events/${post._id}`}>
+            <Link className="linkStyles" to={`/events/${post._id}`}>
                 <h1>{title}</h1>
+            </Link> 
                 <p>{category}</p>
                 <p>{organiser}</p>
                 <p>{location}</p>
                 <p>{date}</p>
                 <p>{description}</p>
-                < br/>
+                < br/> 
                 <h2>People who are attending</h2>
                 {post.attendees && post.attendees.map((user)=>{
                     return (
@@ -67,7 +67,6 @@ const EventPost = ({history, post, showControls}) => {
                         <button className="buttonStyles" onClick={handleAttend}>Going</button>
                     </div>
                 )}
-            </Link>
         </div>
     )
 }
