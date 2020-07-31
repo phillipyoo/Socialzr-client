@@ -59,7 +59,7 @@ const App = () => {
         }
     })
   },[])
- 
+
 
   return (
       <StateContext.Provider value={{store,dispatch}}>
