@@ -13,7 +13,7 @@ import Register from './components/Register'
 import stateReducer from './config/stateReducer'
 import {getPostFromId, getAllEventPosts, addEventPost} from './services/eventPostServices'
 import {StateContext} from './config/store'
-import { userAuthenticated, getLoggedInUser, setLoggedInUser } from './services/authServices'
+// import { userAuthenticated, getLoggedInUser, setLoggedInUser } from './services/authServices'
 import api from "./config/api"
 
 import './styles/theme.css'

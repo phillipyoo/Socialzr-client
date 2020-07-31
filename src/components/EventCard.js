@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 // import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Moment from "moment"
 import '../styles/App.css'
 import '../styles/theme.css'
 const useStyles = makeStyles({
@@ -36,7 +37,7 @@ export default function MediaCard(props) {
             {props.category}
           </Typography>
           <Typography component="h4">
-            {props.date}
+            {Moment(props.date).format("Do MMM YY")}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {props.location}

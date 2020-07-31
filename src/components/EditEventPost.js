@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
 import {useGlobalState} from '../config/store'
-import {getPostFromId} from '../services/eventPostServices'
+import {getPostFromId, updateEventPost} from '../services/eventPostServices'
 
 import '../styles/EditEventPost.css'
 import '../styles/theme.css'
@@ -33,12 +33,14 @@ const EditEventPost = ({history, match}) => {
             date: formState.date,
             description: formState.description
         }
-        const otherPosts = eventPosts.filter((post) => post._id !== updatedPost._id)
-        dispatch({
-            type: "setEventPosts",
-            data: [...otherPosts, updatedPost]
-        })
-        history.push(`/events/${post._id}`)
+        updateEventPost(updatedPost).then(() => {
+            const otherPosts = eventPosts.filter((post) => post._id !== updatedPost._id)
+                dispatch({
+                type: "setEventPosts",
+                data: [updatedPost, ...otherPosts]
+                })
+                history.push(`/events/${post._id}`)
+            })
     }
     // Set initial form values to what is in the current post
     const initialFormState = {
@@ -53,14 +55,16 @@ const EditEventPost = ({history, match}) => {
     const [formState,setFormState] = useState(initialFormState)
 
     useEffect(() => {
+        console.log(post)
         // Set the formState to the fields in the post after mount and when post changes
         post && setFormState({
             title: post.title,
             category: post.category,
-            organiser: "",
-            location: "",
-            date: "",
+            organiser: post.organiser,
+            location: post.location,
+            date: post.date,
             description: post.description
+
         })
     },[post])
 
@@ -82,17 +86,17 @@ const EditEventPost = ({history, match}) => {
 
             <div className='divStyles'>
                 <label className='labelStyles'>Organiser</label>
-                <input className='inputStyles' required type='text' name='organiser' placeholder='Enter Event Organiser' onChange={handleChange} />
+                <input className='inputStyles' required type='text' name='organiser' value={formState.organiser} placeholder='Enter Event Organiser' onChange={handleChange} />
             </div>
 
             <div className='divStyles'>
                 <label className='labelStyles'>Location</label>
-                <input className='inputStyles' required type='text' name='location' placeholder='Enter Event Location' onChange={handleChange} />
+                <input className='inputStyles' required type='text' name='location' value={formState.location} placeholder='Enter Event Location' onChange={handleChange} />
             </div>
 
             <div className='divStyles'>
                 <label className='labelStyles'>Date</label>
-                <input className='inputStyles' required type='date' name='date' onChange={handleChange} />
+                <input className='inputStyles' required type='date' name='date' value={formState.date} onChange={handleChange} />
             </div>
 
             <div className="divStyles">

@@ -12,16 +12,20 @@ const EventPost = ({history, post, showControls}) => {
     // If we don't have a post, return null
     console.log("got post: ", post)
     if (!post) return <div id="noPost"><p>There is no event listing with that ID</p></div>
+    
     const {title, category, organiser, location, date, description} = post 
     // Handle the delete button
     function handleDelete(event) {
         event.preventDefault()
-        const updatedPosts = eventPosts.filter((eventPost) => eventPost._id !== post._id)
-        dispatch({
-            type: "setEventPosts",
-            data: updatedPosts
+        api.delete(`/events/${post._id}`).then(response =>{
+            const updatedPosts = eventPosts.filter((eventPost) => eventPost._id !== post._id)
+            dispatch({
+                type: "setEventPosts",
+                data: updatedPosts
+            })
+            history.push("/events")
+            console.log(response)
         })
-        history.push("/")
     }
     // Handle the edit button
     function handleEdit(event) {
