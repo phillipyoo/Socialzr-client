@@ -11,8 +11,8 @@ import Nav from './components/Nav'
 import SignIn from './components/SignIn'
 import Register from './components/Register'
 import stateReducer from './config/stateReducer'
-import {StateContext} from './config/store'
 import {getPostFromId, getAllEventPosts, addEventPost} from './services/eventPostServices'
+import {StateContext} from './config/store'
 import { userAuthenticated, getLoggedInUser, setLoggedInUser } from './services/authServices'
 import api from "./config/api"
 
@@ -59,6 +59,7 @@ const App = () => {
         }
     })
   },[])
+
 
   return (
       <StateContext.Provider value={{store,dispatch}}>
