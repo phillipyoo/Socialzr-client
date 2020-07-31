@@ -1,11 +1,15 @@
 import React from 'react'
 import {useGlobalState} from '../config/store'
 import api from "../config/api"
+import imageHeader from '../img/jade-masri-74tlEYKgrBE-unsplash.jpg'
+import Footer from '../components/Footer'
 
 import Moment from "moment"
 import TimeAgo from 'react-timeago'
 
 import '../styles/theme.css'
+import '../styles/App.css'
+import '../styles/Event.css'
 const EventPost = ({history, post, showControls}) => {
     const {store, dispatch} = useGlobalState()
     const {eventPosts} = store
@@ -44,7 +48,8 @@ const EventPost = ({history, post, showControls}) => {
     }
     return (
         <div className="body">
-        <div className="event" >
+        <img id="headerImage" src={imageHeader} alt="event header" />
+            <div className="event" >
                 <h1>{title}</h1>
                 <p>{category}</p>
                 <p>{organiser}</p>
@@ -62,12 +67,13 @@ const EventPost = ({history, post, showControls}) => {
                 <br/>
                 {showControls && (
                     <div>
-                        <button className="buttonStyles" onClick={handleDelete}>Delete</button>
-                        <button className="buttonStyles" onClick={handleEdit}>Edit</button>
-                        <button className="buttonStyles" onClick={handleAttend}>Going</button>
+                        <button className="btn-linkStyles" onClick={handleAttend}>Going</button>
+                        <button className="btn-linkStyles" onClick={handleEdit}>Edit</button>
+                        <button className="btn-linkStyles" onClick={handleDelete}>Delete</button>
                     </div>
                 )}
-        </div>
+            </div>
+            <Footer />
         </div>
     )
 }

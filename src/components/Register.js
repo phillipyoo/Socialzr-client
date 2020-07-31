@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {registerUser} from '../services/authServices';
-import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 import '../styles/theme.css'
@@ -43,7 +42,11 @@ const Register = ({history}) => {
 
     return (
         <div id="body">
-        <Header />
+            <div className='header'>
+              <span className='header-title'>
+                  Sign Up
+              </span>
+          </div>
         <form className="form" onSubmit={handleSubmit}>
             {errorMessage && <p className={{color: 'red'}}>{errorMessage}</p>}
             <div className="divStyles">

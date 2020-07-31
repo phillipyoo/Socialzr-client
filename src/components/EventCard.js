@@ -4,32 +4,29 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-// import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Moment from "moment"
 import '../styles/App.css'
 import '../styles/theme.css'
 import '../styles/EventCard.css'
-// const useStyles = makeStyles({
-//   root: {
-//     maxWidth: 455,
-//   },
-//   media: {
-//     height: 140,
-//   },
-// });
+
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 550,
+  },
+  media: {
+    height: 200,
+  },
+});
+
 export default function MediaCard(props) {
-  // const classes = useStyles();
+  const classes = useStyles();
   return (
     <div class="body">
+    <div id="event-section">
     <Card class="root">
       <CardActionArea>
-        {/* <CardMedia
-          class={classes.media}
-          image={props.image}
-          title="event"
-        /> */}
         <CardContent>
           <Typography gutterBottom variant="h5" component="h1">
             {props.title}
@@ -51,6 +48,7 @@ export default function MediaCard(props) {
         </Button>
       </CardActions>
     </Card>
+    </div>
     </div>
   );
 }

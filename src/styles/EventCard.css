@@ -1,11 +1,21 @@
 
 .event-section {
-  max-width: 455px;
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
+  width: 90%;
+  padding: 5em;
+  margin-left: 3em;
+  margin-right: 3em;
+  display: flex;
+  flex-direction: row; 
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
+@media only screen and (min-width:150px) and (max-width:560px){
+  .event-section{
+  width: 80%;
+  } 
+}
 
 /* .media {
     height: 140

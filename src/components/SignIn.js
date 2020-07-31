@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {useGlobalState} from '../config/store'
 import {loginUser} from '../services/authServices'
-import Header from '../components/Header'
 import api from '../config/api'
 import Footer from '../components/Footer'
 
@@ -49,8 +48,11 @@ const SignIn = ({history}) => {
 
     return (
         <div id="body">
-        <Header />
-
+            <div className='header'>
+              <span className='header-title'>
+                  Sign In
+              </span>
+          </div>
         <form className="form" onSubmit={handleSubmit}>
             {errorMessage && <p className={{color: 'red'}}>{errorMessage}</p>}
             <div className="divStyles">

@@ -1,0 +1,25 @@
+.event {
+    font-family: 'Montserrat', sans-serif;
+    padding: 2em;
+    width: 80%;
+    margin-left: 8em;
+    margin-right: 8em;
+    justify-content: space-around;
+
+}
+
+@media only screen and (min-width:150px) and (max-width:560px){
+    .h1{
+        font-size: 80%;
+    }
+
+    .event {
+        padding: 2em;
+        width: 70%;
+        margin-left: 3em;
+        margin-right: 5em;
+        justify-content: space-around;
+    }
+
+
+}

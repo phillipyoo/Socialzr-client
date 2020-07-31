@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react'
 import {withRouter} from 'react-router-dom'
 import {useGlobalState} from '../config/store'
 import {getPostFromId, updateEventPost} from '../services/eventPostServices'
+import Header from './Header'
 
-import '../styles/EditEventPost.css'
 import '../styles/theme.css'
+import '../styles/App.css'
 
 const EditEventPost = ({history, match}) => {
 
@@ -69,10 +70,23 @@ const EditEventPost = ({history, match}) => {
     },[post])
 
     return (
+        <div id="body">
+            <div className='header'>
+              <span className='header-title'>
+                  EDIT EVENT
+              </span>
+          </div>
+        <div className="eventPost-Container">
         <form className="form" id="editPostForm" onSubmit={handleSubmit}>
             <div className="divStyles">
                 <label className="labelStyles">Title</label>
                 <input className="inputStyles" required type="text" name="title" value={formState.title} onChange={handleChange}></input>
+            </div>
+
+
+            <div className='divStyles'>
+                <label className='labelStyles'>Organiser</label>
+                <input className='inputStyles' required type='text' name='organiser' value={formState.organiser} placeholder='Enter Event Organiser' onChange={handleChange} />
             </div>
 
             <div className='divStyles'>
@@ -85,18 +99,13 @@ const EditEventPost = ({history, match}) => {
             </div>
 
             <div className='divStyles'>
-                <label className='labelStyles'>Organiser</label>
-                <input className='inputStyles' required type='text' name='organiser' value={formState.organiser} placeholder='Enter Event Organiser' onChange={handleChange} />
+                <label className='labelStyles'>Date</label>
+                <input className='inputStyles' required type='date' name='date' value={formState.date} onChange={handleChange} />
             </div>
 
             <div className='divStyles'>
                 <label className='labelStyles'>Location</label>
                 <input className='inputStyles' required type='text' name='location' value={formState.location} placeholder='Enter Event Location' onChange={handleChange} />
-            </div>
-
-            <div className='divStyles'>
-                <label className='labelStyles'>Date</label>
-                <input className='inputStyles' required type='date' name='date' value={formState.date} onChange={handleChange} />
             </div>
 
             <div className="divStyles">
@@ -105,6 +114,8 @@ const EditEventPost = ({history, match}) => {
             </div>
             <input className="buttonStyles" type="submit" value="Update post"></input>
         </form>
+        </div>
+        </div>
     ) 
 }
 
