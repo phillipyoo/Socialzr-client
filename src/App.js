@@ -59,21 +59,6 @@ const App = () => {
         }
     })
   },[])
-    // userAuthenticated().then(() => {
-    //   dispatch({
-    //     type: "setLoggedInUser",
-    //     data: getLoggedInUser()
-    //   })
-    // }).catch((error) => {
-    //   console.log("got an error trying to check authenticated user: ", error)
-    //   setLoggedInUser(null)
-    //   dispatch({
-    //     type: "setLoggedInUser",
-    //     data: null
-    //   })
-    // })
-    // // A function that specifies anyactions on component unmount
-    // return () => {}
 
   return (
       <StateContext.Provider value={{store,dispatch}}>
