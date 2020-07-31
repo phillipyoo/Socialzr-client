@@ -37,8 +37,8 @@ const EventPost = ({history, post, showControls}) => {
         event.preventDefault()
         api.put(`/events/add-user/${post._id}`).then(response => {
             console.log(response)
+            history.push("/events")
         })
-
         console.log(post._id)
     }
 
