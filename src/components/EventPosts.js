@@ -11,6 +11,7 @@ import imageHeader from '../img/socialzrLogo.png'
 const EventPosts = () => {
     const {store} = useGlobalState()
     const {eventPosts} = store
+    console.log("eventposts", eventPosts)
     return (
         <div id="body">
         <img id="headerImage" src={imageHeader} alt=" " />
