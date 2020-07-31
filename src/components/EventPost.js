@@ -1,7 +1,7 @@
 import React from 'react'
 import {useGlobalState} from '../config/store'
 import api from "../config/api"
-import imageHeader from '../img/jade-masri-74tlEYKgrBE-unsplash.jpg'
+import imageHeader from '../img/long-truong-Y5PXVs1LpY4-unsplash.jpg'
 import Footer from '../components/Footer'
 
 import Moment from "moment"

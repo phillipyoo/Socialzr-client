@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, Fragment} from 'react'
 import {withRouter} from 'react-router-dom'
 import {useGlobalState} from '../config/store'
 import {getPostFromId, updateEventPost} from '../services/eventPostServices'
-import Header from './Header'
+import Footer from './Footer'
 
 import '../styles/theme.css'
 import '../styles/App.css'
@@ -115,6 +115,7 @@ const EditEventPost = ({history, match}) => {
             <input className="buttonStyles" type="submit" value="Update post"></input>
         </form>
         </div>
+        <Footer />
         </div>
     ) 
 }
