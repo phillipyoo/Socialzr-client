@@ -44,9 +44,9 @@ const EventPost = ({history, post, showControls}) => {
 
     return (
         <div className="post">
-            <Link className="linkStyles" to={`/events/${post._id}`} >
+            <Link className="linkStyles" to={`/events/${post._id}`}>
                 <h1>{title}</h1>
-            </Link>
+            </Link> 
                 <p>{category}</p>
                 <p>{organiser}</p>
                 <p>{location}</p>
@@ -67,7 +67,6 @@ const EventPost = ({history, post, showControls}) => {
                         <button className="buttonStyles" onClick={handleAttend}>Going</button>
                     </div>
                 )}
-            </Link>
         </div>
     )
 }
