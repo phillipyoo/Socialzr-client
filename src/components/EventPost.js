@@ -2,7 +2,8 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {useGlobalState} from '../config/store'
 import api from "../config/api"
-
+import Moment from "moment"
+import TimeAgo from 'react-timeago'
 import '../styles/theme.css'
 
 const EventPost = ({history, post, showControls}) => {
@@ -50,7 +51,8 @@ const EventPost = ({history, post, showControls}) => {
                 <p>{category}</p>
                 <p>{organiser}</p>
                 <p>{location}</p>
-                <p>{date}</p>
+                <p>{Moment(date).format("Do MMM YY")}</p>
+                <TimeAgo date={date}/>
                 <p>{description}</p>
                 < br/> 
                 <h2>People who are attending</h2>

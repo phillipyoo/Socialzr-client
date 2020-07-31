@@ -11,8 +11,8 @@ import Nav from './components/Nav'
 import SignIn from './components/SignIn'
 import Register from './components/Register'
 import stateReducer from './config/stateReducer'
-import {StateContext} from './config/store'
 import {getPostFromId, getAllEventPosts, addEventPost} from './services/eventPostServices'
+import {StateContext} from './config/store'
 import { userAuthenticated, getLoggedInUser, setLoggedInUser } from './services/authServices'
 import api from "./config/api"
 
@@ -59,21 +59,7 @@ const App = () => {
         }
     })
   },[])
-    // userAuthenticated().then(() => {
-    //   dispatch({
-    //     type: "setLoggedInUser",
-    //     data: getLoggedInUser()
-    //   })
-    // }).catch((error) => {
-    //   console.log("got an error trying to check authenticated user: ", error)
-    //   setLoggedInUser(null)
-    //   dispatch({
-    //     type: "setLoggedInUser",
-    //     data: null
-    //   })
-    // })
-    // // A function that specifies anyactions on component unmount
-    // return () => {}
+ 
 
   return (
       <StateContext.Provider value={{store,dispatch}}>
