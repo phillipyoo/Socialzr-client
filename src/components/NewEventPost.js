@@ -2,10 +2,8 @@ import React, {useState} from 'react'
 import {withRouter} from 'react-router-dom'
 import { useGlobalState } from '../config/store'
 import {addEventPost} from '../services/eventPostServices'
-
-import Nav from '../components/Nav'
 import api from '../config/api'
-import Header from '../components/Header'
+
 
 import Footer from '../components/Footer'
 // import {Block, Input, Label, ErrorText} from './StyledComponents'
@@ -42,6 +40,7 @@ const NewEventPost = ({history}) => {
           // history.push(`/events/${newPost._id}`)
           api.put(`/events/${newPost._id}`).then(response =>{
             console.log(response)
+            history.push("/events")
           })
       })
       
@@ -49,9 +48,9 @@ const NewEventPost = ({history}) => {
           const status = error.response ? error.response.status : 500
           console.log("caught error on edit", error)
           if(status === 403)
-              setErrorMessage("Oops! It appears we lost your login session. Make sure 3rd party cookies are not blocked by your browser settings.", error)
+              setErrorMessage("Oops! It appears we lost your login session. Make sure 3rd party cookies are not blocked by your browser settings.")
           else
-              setErrorMessage("Well, this is embarrassing... There was a problem on the server.", error)
+              setErrorMessage("Well, this is embarrassing... There was a problem on the server.")
       })
   // console.log(newPost)
   }
@@ -66,7 +65,7 @@ const NewEventPost = ({history}) => {
   } 
 
   const [formState,setFormState] = useState(initialFormState)
-  const [setErrorMessage] = useState(null)
+  const [error, setErrorMessage] = useState(null)
   const {store, dispatch} = useGlobalState()
   const {eventPosts} = store
 
