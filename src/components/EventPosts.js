@@ -16,8 +16,8 @@ const EventPosts = () => {
         <div className="event-section">
             {eventPosts.sort((a,b) => b.modified_date - a.modified_date)
                 .map((post) => <EventCard title={post.title} location={post.location} category={post.category} date={post.date} id={post._id}/>)}   
-        <Footer />     
         </div>
+        <Footer />     
         </div>
     )
 }

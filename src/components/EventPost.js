@@ -12,7 +12,7 @@ const EventPost = ({history, post, showControls}) => {
     // If we don't have a post, return null
     console.log("got post: ", post)
     
-    if (!post) return <div id="noPost"><p>There is no event listing with that ID</p></div>
+    if (!post) return null
     
     const {title, category, organiser, location, date, description} = post 
     // Handle the delete button

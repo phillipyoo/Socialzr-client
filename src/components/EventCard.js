@@ -10,22 +10,23 @@ import Typography from '@material-ui/core/Typography';
 import Moment from "moment"
 import '../styles/App.css'
 import '../styles/theme.css'
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 455,
-  },
-  media: {
-    height: 140,
-  },
-});
+import '../styles/EventCard.css'
+// const useStyles = makeStyles({
+//   root: {
+//     maxWidth: 455,
+//   },
+//   media: {
+//     height: 140,
+//   },
+// });
 export default function MediaCard(props) {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
-    <div className="body">
-    <Card className={classes.root}>
+    <div class="body">
+    <Card class="root">
       <CardActionArea>
         {/* <CardMedia
-          className={classes.media}
+          class={classes.media}
           image={props.image}
           title="event"
         /> */}
